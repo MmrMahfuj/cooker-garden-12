@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 const AddProduct = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        axios.post('http://localhost:5000/products', data)
+        axios.post('https://hidden-retreat-64560.herokuapp.com/products', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('added successfully');
@@ -24,6 +24,8 @@ const AddProduct = () => {
 
                         <label className="d-flex justify-content-start">Name of the Product</label>
                         <input className="w-100 input-field" {...register("title", require)} /><br />
+                        <label className="mt-3 d-flex justify-content-start">Product Model</label>
+                        <input className="w-100 input-field" {...register("model", require)} /><br />
                         <label className="mt-3 d-flex justify-content-start">Short Description</label>
                         <textarea className="w-100 input-field" {...register("shortDes",)} />
                         <br />
