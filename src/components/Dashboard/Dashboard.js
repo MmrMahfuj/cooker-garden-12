@@ -35,13 +35,13 @@ const Dashboard = () => {
     let { path, url } = useRouteMatch();
     const { logOut } = useAuth();
 
-    const element = <FontAwesomeIcon icon={faUserShield} />
+    const element = <FontAwesomeIcon icon={faCartPlus} />
     return (
         <div className="dashboard">
             <Row>
                 <Col xs={3}>
                     <div
-                        style={{ display: 'flex', height: '100vh', overflow: 'scroll initial' }}
+                        style={{ display: 'flex', minHeight: '100vh', height: '100%', overflow: 'scroll initial' }}
                     >
                         <CDBSidebar textColor="#fff" backgroundColor="#333">
                             <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
@@ -137,3 +137,5 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
+// position: 'fixed',

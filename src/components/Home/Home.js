@@ -1,10 +1,18 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
+import bannerImg from '../../images/banner.jpg';
+import './Home.css';
 
 const Home = () => {
     return (
-        <div>
-            <h2>this is home</h2>
-        </div>
+        <>
+            <Container className="mt-2">
+                <img src={bannerImg} className="home-banner-img w-100" alt="" />
+            </Container>
+            <Container>
+
+            </Container>
+        </>
     );
 };
 

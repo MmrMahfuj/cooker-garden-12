@@ -12,6 +12,7 @@ import Login from './components/LoginRegister/Login/Login';
 import Register from './components/LoginRegister/Register/Register';
 import MakeAdmin from './components/MakeAdmin/MakeAdmin';
 import ManageAllProducts from './components/ManageAllProducts/ManageAllProducts';
+import OrderProceed from './components/OrderProceed/OrderProceed';
 import AuthProvider from './contexts/AuthProvider';
 
 function App() {
@@ -38,6 +39,11 @@ function App() {
             <Route path="/dashboard">
               <Header></Header>
               <Dashboard></Dashboard>
+              <Footer></Footer>
+            </Route>
+            <Route path="/orderProceed/:id">
+              <Header></Header>
+              <OrderProceed></OrderProceed>
               <Footer></Footer>
             </Route>
             <Route path="/about">

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import './AddProduct.css';
+import swal from 'sweetalert';
 import { useForm } from 'react-hook-form';
 
 const AddProduct = () => {
@@ -9,7 +10,7 @@ const AddProduct = () => {
         axios.post('https://hidden-retreat-64560.herokuapp.com/products', data)
             .then(res => {
                 if (res.data.insertedId) {
-                    alert('added successfully');
+                    swal("Added Successfully!", "You clicked the button!", "success");
                     reset()
 
                 }
@@ -24,19 +25,19 @@ const AddProduct = () => {
                     <div className="">
 
                         <label className="d-flex justify-content-start">Name of the Product</label>
-                        <input className="w-100 p-2  input-field" {...register("title", require)} /><br />
+                        <input type="text" required className="w-100 p-2  input-field" {...register("title")} /><br />
                         <label className="mt-3 d-flex justify-content-start">Product Model</label>
-                        <input className="w-100 p-2  input-field" {...register("model", require)} /><br />
+                        <input type="text" required className="w-100 p-2  input-field" {...register("model")} /><br />
                         <label className="mt-3 d-flex justify-content-start">image URL</label>
-                        <input className="w-100 p-2  input-field" {...register("img", require)} /><br />
+                        <input required className="w-100 p-2  input-field" {...register("img")} /><br />
                         <label className="mt-3 d-flex justify-content-start">Product Price</label>
-                        <input className="w-100 p-2  input-field" type="number" {...register("price", require)} /><br />
+                        <input required className="w-100 p-2  input-field" type="number" {...register("price")} /><br />
 
                         <label className="mt-3 d-flex justify-content-start">Short Description</label>
-                        <textarea className="w-100 p-2  input-field" {...register("shortDes",)} />
+                        <textarea required className="w-100 p-2  input-field" {...register("shortDes",)} />
                         <br />
                         <label className="mt-3 d-flex justify-content-start">Description</label>
-                        <textarea rows="5" className="w-100 p-2  input-field" {...register("des",)} />
+                        <textarea required rows="5" className="w-100 p-2  input-field" {...register("des",)} />
                         <br />
                     </div>
                     <input type="submit" className="regular-btn w-25 mt-2" value="ADD PRODUCT" />
