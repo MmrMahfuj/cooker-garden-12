@@ -21,7 +21,7 @@ const MakeAdmin = () => {
         const user = { email }
         console.log(user);
         e.preventDefault()
-        fetch('http://localhost:5000/users/admin', {
+        fetch('https://hidden-retreat-64560.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('idToken')}`,

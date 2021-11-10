@@ -5,6 +5,7 @@ import useAuth from '../hooks/useAuth';
 import { Link, NavLink } from 'react-router-dom';
 
 const Header = () => {
+
     const { user, logOut } = useAuth();
     return (
         <>

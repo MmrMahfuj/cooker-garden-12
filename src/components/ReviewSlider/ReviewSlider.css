@@ -1,0 +1,7 @@
+
+.review-cart{
+    min-height: 250px;
+    border-radius: 15px;
+    box-shadow: -3px 2px 18px -7px rgba(0,0,0,0.75);
+    align-items: center;
+}

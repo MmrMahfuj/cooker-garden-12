@@ -23,7 +23,7 @@ const Review = () => {
         data.rating = rating
         data.email = user.email
         data.displayName = user.displayName
-        axios.post('http://localhost:5000/reviews', data)
+        axios.post('https://hidden-retreat-64560.herokuapp.com/reviews', data)
             .then(res => {
                 if (res.data.insertedId) {
                     swal("Added Successfully!", "You clicked the button!", "success");

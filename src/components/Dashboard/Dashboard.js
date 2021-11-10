@@ -2,7 +2,7 @@ import React from 'react';
 import { Col, Row, Button } from 'react-bootstrap';
 import ManageAllProducts from '../ManageAllProducts/ManageAllProducts';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCartPlus, faDollyFlatbed, faFilePdf, faGifts, faMoneyCheckAlt, faShoppingCart, faUserShield } from '@fortawesome/free-solid-svg-icons'
+import { faCartPlus, faDollyFlatbed, faFilePdf, faGifts, faMoneyCheckAlt, faShoppingCart, faStar, faUserShield } from '@fortawesome/free-solid-svg-icons'
 import {
     CDBSidebar,
     CDBSidebarContent,
@@ -35,7 +35,7 @@ const Dashboard = () => {
     let { path, url } = useRouteMatch();
     const { logOut } = useAuth();
 
-    const element = <FontAwesomeIcon icon={faCartPlus} />
+    const element = <FontAwesomeIcon icon={faStar} />
     return (
         <div className="dashboard">
             <Row>

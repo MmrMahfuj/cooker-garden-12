@@ -2,7 +2,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
 import About from './components/About/About';
-import AddProduct from './components/AddProduct/AddProduct';
 import Dashboard from './components/Dashboard/Dashboard';
 import Explore from './components/Explore/Explore';
 import Footer from './components/Footer/Footer';
@@ -10,10 +9,11 @@ import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import Login from './components/LoginRegister/Login/Login';
 import Register from './components/LoginRegister/Register/Register';
-import MakeAdmin from './components/MakeAdmin/MakeAdmin';
-import ManageAllProducts from './components/ManageAllProducts/ManageAllProducts';
 import OrderProceed from './components/OrderProceed/OrderProceed';
 import AuthProvider from './contexts/AuthProvider';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 
 function App() {
   return (
