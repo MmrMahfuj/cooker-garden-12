@@ -1,0 +1,32 @@
+
+.bg-color{
+    background-color: #FAF1ED;
+}
+.login{
+    border: 1px solid gray;
+    display: block;
+}
+.login input{
+    border: none;
+    border-bottom: 1px solid gray;
+    outline: none;
+}
+.login-another{
+    display: block;
+}
+.custom-auth-title{
+    color: #253750;
+    font-size: 40px;
+    font-weight: 600;
+}
+.title-variant{
+    color: #3F8810;
+}
+.regular-custom-btn{
+    background-color: #6b6561;
+}
+.google-img{
+    height: 30px;
+    width: 30px;
+    margin-right: 15px;
+}
