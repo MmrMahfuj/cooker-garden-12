@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
 import About from './components/About/About';
 import AddProduct from './components/AddProduct/AddProduct';
+import Dashboard from './components/Dashboard/Dashboard';
 import Explore from './components/Explore/Explore';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
@@ -34,19 +35,9 @@ function App() {
               <Explore></Explore>
               <Footer></Footer>
             </Route>
-            <Route path="/addProduct">
+            <Route path="/dashboard">
               <Header></Header>
-              <AddProduct></AddProduct>
-              <Footer></Footer>
-            </Route>
-            <Route path="/manageAllProducts">
-              <Header></Header>
-              <ManageAllProducts></ManageAllProducts>
-              <Footer></Footer>
-            </Route>
-            <Route path="/makeAdmin">
-              <Header></Header>
-              <MakeAdmin></MakeAdmin>
+              <Dashboard></Dashboard>
               <Footer></Footer>
             </Route>
             <Route path="/about">

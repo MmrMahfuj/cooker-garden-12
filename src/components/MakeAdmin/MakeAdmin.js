@@ -1,9 +1,10 @@
 import React from 'react';
+import Sidebar from '../Sidebar/Sidebar';
 
 const MakeAdmin = () => {
     return (
         <div>
-            <h2>this is make admin</h2>
+            <h4>this is admin</h4>
         </div>
     );
 };

@@ -8,23 +8,16 @@ const Header = () => {
     const { user, logOut } = useAuth();
     return (
         <>
-            <Navbar expand="lg" className=" custom-nav">
+            <Navbar expand="lg" className="mb-5 custom-nav">
                 <Container>
-                    <Navbar.Brand className="fs-2 header-title" as={Link} to="/home">cooker gerden</Navbar.Brand>
+                    <Navbar.Brand className="fs-2 header-title" as={Link} to="/home">Cooker Garden</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mx-auto">
                             <NavLink className="nav-link" to="/home">Home</NavLink>
                             <NavLink className="nav-link" to="/explore">Explore</NavLink>
-                            <NavLink className="nav-link" to="/addProduct">Add Product</NavLink>
-                            <NavLink className="nav-link" to="/manageAllProducts">Manage All Products</NavLink>
-                            <NavLink className="nav-link" to="/makeAdmin">Make admin</NavLink>
 
-
-
-
-
-
+                            <NavLink className="nav-link" to="/dashboard">Dashboard</NavLink>
 
                             <NavLink className="nav-link" to="/about">About</NavLink>
                         </Nav>

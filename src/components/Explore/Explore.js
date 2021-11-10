@@ -14,7 +14,7 @@ const Explore = () => {
     return (
         <>
             <Container>
-                <Row>
+                <Row className="g-4">
                     {
                         allProducts.map(product => <Product
                             key={product._id}

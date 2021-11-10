@@ -1,7 +1,13 @@
 
 .custom-nav{
     /* background-color: #FAF1ED; */
-    background-color: #F8F9FA;
+    /* background-color: #F8F9FA; */
+    background-color: #454545;
+    color: white;
+}
+.header-title{
+    color: white !important;
+    font-family: 'Anton', sans-serif;
 }
 .header-img{
     height: 40px;
@@ -17,12 +23,14 @@
 }
 .regular-btn{
     padding: 8px 15px;
-    background-color: rgba(9, 129, 9, 0.815);
-    color: white;
+    background-color: #E67E22  ;
+    /* background-color: rgba(9, 129, 9, 0.815); */
+    color: black;
+    font-weight: 500;
     border-radius: 5px;
 }
 .regular-btn:hover{
-    background-color: green;
+    background-color: #AF601A ;
 }
 
 
@@ -31,7 +39,7 @@
 .nav-link{
     font-weight: 600;
     font-size: 20px;
-    color: black !important;
+    color: white !important;
     margin-right: 10px;
     padding: 5px 10px;
 }

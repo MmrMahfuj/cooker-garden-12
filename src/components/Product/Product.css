@@ -1,0 +1,12 @@
+.img-product{
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    height: 260px;
+    width: 260px;
+}
+.product-cart{
+    border-radius: 15px;
+    /* box-shadow:3px 1px 1px gray; */
+    /* box-shadow: 3px 12px 35px 0px rgba(0,0,0,0.75); */
+    box-shadow: -3px 2px 18px -7px rgba(0,0,0,0.75);
+}

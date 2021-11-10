@@ -1,18 +1,20 @@
 import React from 'react';
-import { Col } from 'react-bootstrap';
+import './Product.css';
+import { Col, Button } from 'react-bootstrap';
 
 const Product = ({ product }) => {
     const { title, model, shortDes, des, img, price } = product
     return (
         <>
-            <Col md={4}>
-                <div>
-                    <img src={img} className="img-fluid" alt="" />
-                    <h2>{title}</h2>
-                    <h6>{model}</h6>
-                    <p>{shortDes}</p>
-                    <p>{des}</p>
-                    <h4>Price ${price}</h4>
+            <Col md={6}>
+                <div className="border product-cart d-flex justify-content-between">
+                    <div> <img src={img} className="img-product" alt="" /></div>
+                    <div className="p-3">
+                        <h4 className="text-left fw-bold">{title}</h4>
+                        <p className="text-left">{shortDes}</p>
+                        <h4 className="text-left">Price ${price}</h4>
+                        <Button className="regular-btn rounded-pill w-75">Buy Now</Button>
+                    </div>
                 </div>
             </Col>
         </>
