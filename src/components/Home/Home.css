@@ -1,6 +1,16 @@
+/* google font link  */
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap');
+
 
 .home-banner-img{
     height: 310px;
     border-radius: 15px;
     
+}
+.product-title{
+    font-family: 'Anton', sans-serif;
+font-family: 'Open Sans', sans-serif;
+font-style: italic;
+font-weight: 600;
 }

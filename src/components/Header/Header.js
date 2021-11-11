@@ -11,7 +11,7 @@ const Header = () => {
         <>
             <Navbar expand="lg" className=" custom-nav">
                 <Container>
-                    <Navbar.Brand className="fs-2 header-title" as={Link} to="/home">Cooker Garden</Navbar.Brand>
+                    <Navbar.Brand className="fs-1 header-title" as={Link} to="/home">Cooker Garden</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mx-auto">

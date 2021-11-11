@@ -8,7 +8,7 @@ const Product = ({ product }) => {
     return (
         <>
             <Col md={6}>
-                <div className="border product-cart d-flex justify-content-between">
+                <div className="border m-md-3 product-cart d-flex justify-content-between">
                     <Row>
                         <Col>
                             <img src={img} className="img-product img-fluid" alt="" />
