@@ -40,7 +40,7 @@ const AddProduct = () => {
                         <textarea required rows="5" className="w-100 p-2  input-field" {...register("des",)} />
                         <br />
                     </div>
-                    <input type="submit" className="regular-btn w-25 mt-2" value="ADD PRODUCT" />
+                    <input type="submit" className="regular-btn w-md-25 mt-2" value="ADD PRODUCT" />
                 </form>
             </div>
         </>

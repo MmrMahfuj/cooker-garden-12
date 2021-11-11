@@ -71,6 +71,9 @@ const Home = () => {
                     }
                 </Slider>
             </Container>
+            <Container>
+
+            </Container>
         </>
     );
 };
