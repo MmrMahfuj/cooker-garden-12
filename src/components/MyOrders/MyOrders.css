@@ -1,0 +1,16 @@
+
+.custom-li{
+    list-style: none;
+    border: 1px solid gray;
+    border-radius: 15px;
+    margin: 10px 0px;
+    /* padding: 10px; */
+    padding: 10px 0px;
+}
+
+.my-order-img{
+    height: 60px;
+    width: 60px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}

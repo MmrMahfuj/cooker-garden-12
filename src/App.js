@@ -13,6 +13,8 @@ import OrderProceed from './components/OrderProceed/OrderProceed';
 import AuthProvider from './contexts/AuthProvider';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import NotFound from './components/NotFound/NotFound';
 
 
 function App() {
@@ -36,16 +38,16 @@ function App() {
               <Explore></Explore>
               <Footer></Footer>
             </Route>
-            <Route path="/dashboard">
+            <PrivateRoute path="/dashboard">
               <Header></Header>
               <Dashboard></Dashboard>
               <Footer></Footer>
-            </Route>
-            <Route path="/orderProceed/:id">
+            </PrivateRoute>
+            <PrivateRoute path="/orderProceed/:id">
               <Header></Header>
               <OrderProceed></OrderProceed>
               <Footer></Footer>
-            </Route>
+            </PrivateRoute>
             <Route path="/about">
               <Header></Header>
               <About></About>
@@ -56,6 +58,9 @@ function App() {
             </Route>
             <Route path="/register">
               <Register></Register>
+            </Route>
+            <Route path="*">
+              <NotFound></NotFound>
             </Route>
           </Switch>
         </BrowserRouter>

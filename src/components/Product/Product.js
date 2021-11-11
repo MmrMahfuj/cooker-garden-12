@@ -20,7 +20,7 @@ const Product = ({ product }) => {
                                 <h4 className="text-left">Price ${price}</h4>
                                 <NavLink to={`/orderProceed/${_id}`}>
 
-                                    <Button className="regular-btn rounded-pill w-75">Buy Now</Button>
+                                    <Button className="regular-btn rounded-pill w-md-75">Buy Now</Button>
                                 </NavLink>
                             </div>
                         </Col>

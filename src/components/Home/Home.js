@@ -61,7 +61,7 @@ const Home = () => {
             <Container className="mt-2">
                 <img src={bannerImg} className="home-banner-img w-100" alt="" />
             </Container>
-            <Container className="my-2">
+            <Container className="my-5">
                 <Slider {...settings}>
                     {
                         review.map(review => <ReviewSlider

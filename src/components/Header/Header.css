@@ -24,19 +24,23 @@
 .regular-btn{
     padding: 8px 15px;
     background-color: #E67E22  ;
-
-    /* background-color: rgba(9, 129, 9, 0.815); */
     color: black;
     font-weight: 500;
     border-radius: 5px;
     border: 0px;
+    
 }
+
 .regular-btn:hover{
     background-color: #AF601A ;
     color: white;
 }
 .regular-btn:focus{
     background-color: #AF601A ;
+    color: white;
+}
+.regular-btn:active{
+    background-color: #454545 !important;
     color: white;
 }
 
@@ -59,3 +63,9 @@
     border-bottom:2px solid rgba(9, 129, 9, 0.815) ;
     
 }
+
+/* 
+
+
+
+*/

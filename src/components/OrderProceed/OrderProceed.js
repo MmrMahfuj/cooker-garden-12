@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import { useForm } from 'react-hook-form';
 import swal from 'sweetalert';
 import useAuth from '../hooks/useAuth';
@@ -10,6 +10,7 @@ const OrderProceed = () => {
     const { id } = useParams();
     const [product, setProduct] = useState({})
     const { user } = useAuth();
+    const history = useHistory();
 
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
@@ -26,8 +27,9 @@ const OrderProceed = () => {
         axios.post('http://localhost:5000/orders', data)
             .then(res => {
                 if (res.data.insertedId) {
-                    swal("Added Successfully!", "You clicked the button!", "success");
+                    swal("Ordered Successfully Done!", "You Clicked Okay And Happy!", "success");
                     reset()
+                    history.push('/home')
 
                 }
             })
@@ -55,6 +57,7 @@ const OrderProceed = () => {
                         <div className="p-3">
                             <h4 className="text-left fw-bold">{product.title}</h4>
                             <p className="text-left">{product.shortDes}</p>
+                            <p className="text-left">{product.model}</p>
                             <p className="text-left">{product.des}</p>
                             <h4 className="text-left">Price ${product.price}</h4>
 
@@ -78,8 +81,8 @@ const OrderProceed = () => {
                                 <label className="mt-3 d-flex justify-content-start">location</label>
                                 <textarea required className="w-100 p-2  input-field" {...register("location",)} />
                                 <br />
-                                <label className="mt-3 d-flex justify-content-start">more location</label>
-                                <textarea rows="5" className="w-100 p-2  input-field" {...register("moreLocation",)} />
+                                <label className="mt-3 d-flex justify-content-start">Instruction</label>
+                                <textarea rows="5" placeholder="Optional" className="w-100 p-2  input-field" {...register("instruction",)} />
                                 <br />
                             </div>
                             <input type="submit" className="regular-btn w-25 mt-2" value="ADD PRODUCT" />

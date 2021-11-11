@@ -36,35 +36,28 @@ const Review = () => {
 
     return (
         <div className="custom-height d-flex justify-content-center align-items-center">
-            <Container>
-                <Row>
-                    <Col md={6}>
-                        <img src={reviewImg} className="img-fluid" alt="" />
-                    </Col>
-                    <Col md={6}>
-                        <div className="">
-                            <form onSubmit={handleSubmit(onSubmit)}>
-                                <h3>Add Your Review</h3>
-                                <label className="mt-3 d-flex justify-content-start">Review</label>
-                                <textarea required rows="5" className="w-100 p-2  input-field" {...register("review",)} />
-                                <br />
-                                <div className="d-flex justify-content-center">
-                                    <ReactStars
-                                        count={5}
-                                        onChange={ratingChanged}
-                                        size={50}
-                                        isHalf={true}
-                                        emptyIcon={<i className="far fa-star"></i>}
-                                        halfIcon={<i className="fa fa-star-half-alt"></i>}
-                                        fullIcon={<i className="fa fa-star"></i>}
-                                        activeColor="#ffd700"
-                                    />
-                                </div>
-                                <input type="submit" className="regular-btn mt-2" value="ADD Review" />
-                            </form>
+            <Container className="d-flex justify-content-center">
+                <div className="w-md-50">
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                        <h3>Add Your Review</h3>
+                        <label className="mt-3 d-flex justify-content-start">Review</label>
+                        <textarea required rows="5" className="w-100 p-2  input-field" {...register("review",)} />
+                        <br />
+                        <div className="d-flex justify-content-center">
+                            <ReactStars
+                                count={5}
+                                onChange={ratingChanged}
+                                size={50}
+                                isHalf={true}
+                                emptyIcon={<i className="far fa-star"></i>}
+                                halfIcon={<i className="fa fa-star-half-alt"></i>}
+                                fullIcon={<i className="fa fa-star"></i>}
+                                activeColor="#ffd700"
+                            />
                         </div>
-                    </Col>
-                </Row>
+                        <input type="submit" className="regular-btn mt-2" value="ADD Review" />
+                    </form>
+                </div>
             </Container>
         </div>
     );

@@ -41,9 +41,7 @@
   }
 }
 
-.dashboard{
-  overflow-x: hidden;
-}
+
 .custom-height{
   min-height: 100vh;
 }

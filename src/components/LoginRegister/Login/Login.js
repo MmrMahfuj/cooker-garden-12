@@ -1,10 +1,12 @@
 import React, { useState, } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
-import { Link, useLocation, useHistory } from 'react-router-dom';
+import { Link, useLocation, useHistory, NavLink } from 'react-router-dom';
 import loginImg from '../../../images/login.jpg';
 import googleImg from '../../../images/google.png';
 import useAuth from '../../hooks/useAuth';
 import './Login.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGooglePlusG } from '@fortawesome/free-brands-svg-icons';
 
 const Login = () => {
     const { saveUser, signInUsingGoogle, signInEmailAndPassword, setError, error, setUser, setIsLoading } = useAuth();
@@ -54,60 +56,45 @@ const Login = () => {
             .finally(() => setIsLoading(false));
     }
 
+    const handleCreateRegisterBtn = () => {
+        history.push('/register')
+    }
 
     return (
-        <div className="py-5 bg-color">
-            <Container className="mt-5">
-                <Row>
-                    <Col md={6}>
-                        <div className="container-lg m-2 mx-auto">
-                            <div className="login mx-auto p-3">
-                                <form onSubmit={handleLogin}>
-                                    <h3 className="mb-5 custom-auth-title">LOGIN</h3>
-                                    <input className="m-2 p-2 w-75" onBlur={handleEmailChange} type="email" name="" id="" placeholder="Your Email" required /><br />
+        <div className="cooker-login-container">
+            <h2 className="cooker-h2">Sky Walker</h2>
+            <div className="container" id="container">
+                <div className="form-container sign-in-container">
+                    <form className="cooker-form" onSubmit={handleLogin}>
+                        <h1 className="cooker-h1">Sign in</h1>
+                        <div className="social-container">
 
-                                    <input className="m-2 p-2 w-75" onBlur={handlePasswordChange} type="password" name="" id="" placeholder="Your Password" required /><br />
-                                    <div className="d-flex justify-content-around mt-3">
-                                        <span>
-                                            <input type="checkbox" name="" id="" className="m-1 text-start" />
-                                            <label htmlFor="vehicle2"> Remember Me</label>
-                                        </span>
-                                        <span>
-                                            {/* <Link>Forget Password</Link> */}
-                                        </span>
-                                    </div>
-                                    <br />
-                                    <p className="text-danger mt-2">{error}</p>
-                                    <input className="w-75 mt-3 p-2 rounded text-white regular-btn " type="submit" value="Login" />
-
-                                </form>
-
-                                <p className="mt-2">Don't have an account? <Link to="/register">Create an account</Link></p>
-                            </div>
-
+                            <button onClick={handleGoogleLogin} className="social-button"><FontAwesomeIcon className="social" icon={faGooglePlusG} /></button>
                         </div>
-                        <div>
-                            <Row>
-                                <Col>
-                                    <hr />
-                                </Col>
-                                OR
-                                <Col>
-                                    <hr /></Col>
-                            </Row>
-                        </div>
-                        <div className="login-another mx-auto mb-4 ">
-                            <button className="w-50 text-white py-2 rounded-pill regular-btn" onClick={handleGoogleLogin}>
-                                <img src={googleImg} className="google-img" alt="" />
-                                Google Sign In</button>
-                        </div>
+                        <span className="cooker-span">or use your account</span>
+                        <input className="cooker-input" onBlur={handleEmailChange} type="email" name="" id="" placeholder="Your Email" />
+                        <input className="cooker-input" onBlur={handlePasswordChange} type="password" name="" id="" placeholder="Your Password" />
+                        <p className="text-danger my-2">{error}</p>
+                        <p><Link to="/register">Create an account</Link></p>
+                        <input type="submit" value="Sign In" className="cooker-button" />
 
-                    </Col>
-                    <Col md={6} className="align-self-center">
-                        <img src={loginImg} className="img-fluid" alt="" />
-                    </Col>
-                </Row>
-            </Container>
+                    </form>
+                </div>
+                <div className="overlay-container">
+                    <div className="overlay">
+                        <div className="overlay-panel overlay-left">
+                            <h1 className="cooker-h1">Welcome Back!</h1>
+                            <p className="cooker-p">To keep connected with us please login with your personal info</p>
+                            <button className="ghost cooker-button" id="signIn">Sign In</button>
+                        </div>
+                        <div className="overlay-panel overlay-right">
+                            <h1 className="cooker-h1">Hello, Friend!</h1>
+                            <p className="cooker-p">Enter your personal details and start journey with us</p>
+                            <button onClick={handleCreateRegisterBtn} className="ghost cooker-button" id="signUp">Sign Up</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };

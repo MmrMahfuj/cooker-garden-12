@@ -1,21 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Table } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrashAlt, faUserCheck, faShoppingBasket, faCheckSquare, faTruck } from '@fortawesome/free-solid-svg-icons'
+import { faTrashAlt, faUserCheck, faUserCog, faShoppingBasket, faCheckSquare, faTruck, faTruckLoading } from '@fortawesome/free-solid-svg-icons'
 import swal from 'sweetalert';
+import useAuth from '../hooks/useAuth';
 
 const ManageAllOrders = () => {
     const [allOrders, setAllOrders] = useState([]);
     const [control, setControl] = useState(false);
-    const [status, setStatus] = useState('Pending')
+
 
     useEffect(() => {
         fetch('https://hidden-retreat-64560.herokuapp.com/orders')
             .then(res => res.json())
-            .then(data => setAllOrders(data))
+            .then(data => {
+                setAllOrders(data);
+            })
     }, [control])
 
-    console.log(allOrders);
+    // console.log(allOrders);
+
     // handle DELETE orders
     const handleRemoveorders = id => {
         swal({
@@ -55,7 +59,7 @@ const ManageAllOrders = () => {
     // handle ORDER status 
     const handleStatus = (id, statusName) => {
         const status = { status: statusName }
-        console.log(statusName);
+        // console.log(statusName);
         const url = `https://hidden-retreat-64560.herokuapp.com/ordersStatus/${id}`;
         fetch(url, {
             method: 'PUT',
@@ -67,7 +71,7 @@ const ManageAllOrders = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.modifiedCount > 0) {
-                    swal("Added Successfully!", "You clicked the button!", "success");
+                    swal("Updated Successfully!", "You Happy!", "success");
                     setControl(!control);
                 }
                 else {
@@ -104,7 +108,7 @@ const ManageAllOrders = () => {
                                     <td><img src={orders?.productImg} className="manageProduct-img " alt="" /></td>
                                     <td><h6 className="fw-bolder">{orders?.productName}</h6></td>
                                     <td>{orders?.productModel}</td>
-                                    <td>{orders?.productPrice}</td>
+                                    <td>${orders?.productPrice}</td>
                                     <td>{orders?.status}</td>
 
                                     <td><button onClick={() => handleRemoveorders(orders?._id)} className="btn bg-danger text-white p-2 mt-2"><FontAwesomeIcon icon={faTrashAlt} /></button><br /></td>
@@ -122,16 +126,16 @@ const ManageAllOrders = () => {
                                         }
                                         {
                                             orders.status === "On the way" && <div>
-                                                <button onClick={() => handleStatus(orders?._id, "Accept Customer")} className="btn bg-success text-white p-2 mt-2"><FontAwesomeIcon icon={faUserCheck} /></button><br />
+                                                <button onClick={() => handleStatus(orders?._id, "Accepted Customer")} className="btn bg-success text-white p-2 mt-2"><FontAwesomeIcon icon={faTruckLoading} /></button><br />
                                             </div>
                                         }
                                         {
-                                            orders.status === "Accept Customer" && <div>
-                                                <button onClick={() => handleStatus(orders?._id, "Done")} className="btn bg-success text-white p-2 mt-2"><FontAwesomeIcon icon={faUserCheck} /></button><br />
+                                            orders.status === "Accepted Customer" && <div>
+                                                <button onClick={() => handleStatus(orders?._id, "Delivered")} className="btn bg-success text-white p-2 mt-2"><FontAwesomeIcon icon={faUserCheck} /></button><br />
                                             </div>
                                         }
                                         {
-                                            orders.status === "Done" && <div>
+                                            orders.status === "Delivered" && <div>
                                                 <button disabled className="btn bg-success text-white p-2 mt-2"><FontAwesomeIcon icon={faCheckSquare} /></button><br />
                                             </div>
                                         }
