@@ -62,8 +62,8 @@ const Login = () => {
 
     return (
         <div className="cooker-login-container">
-            <h2 className="cooker-h2">Sky Walker</h2>
-            <div className="container" id="container">
+            <h2 className="cooker-h2">Cooker Garden</h2>
+            <div className="cooker-main-container" id="cooker-main-container">
                 <div className="form-container sign-in-container">
                     <form className="cooker-form" onSubmit={handleLogin}>
                         <h1 className="cooker-h1">Sign in</h1>

@@ -5,6 +5,7 @@ import './Home.css';
 import Slider from "react-slick";
 import ReviewSlider from '../ReviewSlider/ReviewSlider';
 import Product from '../Product/Product';
+import bannerVideo from '../../images/banner.mp4';
 
 
 
@@ -76,9 +77,11 @@ const Home = () => {
 
     return (
         <>
-            <Container className="mt-2">
-                <img src={bannerImg} className="home-banner-img w-100" alt="" />
-            </Container>
+            <div className="w-100 banner-container">
+                <video width="100%" height="auto" autoPlay="true" loop muted class="banner-video">
+                    <source class="desktop_auto_video" src={bannerVideo} type="video/mp4" />
+                </video>
+            </div>
             <Container className="my-5 custom-height">
                 <h2 className="pt-4 mb-3 text-start product-title">Customer's Favorite</h2>
                 {
@@ -104,8 +107,23 @@ const Home = () => {
                 </Slider>
             </Container>
 
+            <Container>
+
+
+            </Container>
+
         </>
     );
 };
 
 export default Home;
+
+
+/*
+ div Irrelevant code
+
+ <h2 class="banner-video-text">
+                    This is the future <br />of cooking.
+                </h2>
+
+ */

@@ -16,7 +16,7 @@ const Header = () => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mx-auto">
                             <NavLink className="nav-link" to="/home">Home</NavLink>
-                            <NavLink className="nav-link" to="/explore">Explore</NavLink>
+                            <NavLink className="nav-link" to="/explore">Discover</NavLink>
 
                             {
                                 user.email && <NavLink className="nav-link" to="/dashboard">Dashboard</NavLink>
