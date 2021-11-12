@@ -33,7 +33,7 @@ const ReviewSlider = (props) => {
 
                     <div className="d-flex justify-content-between my-2">
                         <img src={reviewCodeImg} className="review-code-img" alt="" />
-                        <span className="cooker-hr">-------------------------------------------------</span>
+                        <span className="cooker-hr">----------------------------------------------</span>
                     </div>
 
                     <h6 className="align-self-center">{review}</h6>

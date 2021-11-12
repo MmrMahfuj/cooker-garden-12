@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import Product from '../Product/Product';
+import exploreBanner from '../../images/explore-banner.jpg';
 
 const Explore = () => {
 
@@ -13,6 +14,9 @@ const Explore = () => {
     }, [])
     return (
         <>
+            <div>
+                <img src={exploreBanner} className="w-100 shadow-lg" alt="" />
+            </div>
             <Container fluid="xxl" className="my-5">
                 <Row className="g-4">
                     {

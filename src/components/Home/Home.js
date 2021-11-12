@@ -7,10 +7,9 @@ import ReviewSlider from '../ReviewSlider/ReviewSlider';
 import Product from '../Product/Product';
 import bannerVideo from '../../images/banner.mp4';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { faHourglassHalf, faTrophy, faUserShield, faUserTie } from '@fortawesome/free-solid-svg-icons';
 import { faCheckCircle, faClock, faFilePdf } from '@fortawesome/free-regular-svg-icons';
-import middleBanner from '../../images/middle-bannder.png';
+import middleBanner from '../../images/middle-img2.jpg';
 
 
 
@@ -83,12 +82,15 @@ const Home = () => {
 
     return (
         <>
-            <div className="w-100 banner-container">
-                <video width="100%" height="auto" autoPlay="true" loop muted class="banner-video">
+            <div className="w-100  banner-container">
+                <video width="100%" height="auto" autoPlay="true" loop muted class="banner-video shadow-lg">
                     <source class="desktop_auto_video" src={bannerVideo} type="video/mp4" />
                 </video>
             </div>
-            <div className="my-5 custom-height container-xxl">
+            <div>
+                <img src={bannerImg} className="w-100 banner-img-top my-5" alt="" />
+            </div>
+            <Container fluid="xxl" className="my-5 custom-height">
                 <h2 className="pt-4 mb-3 text-start product-title">Customer's Favorite</h2>
                 {
                     <Row className="g-4">
@@ -100,9 +102,9 @@ const Home = () => {
                         }
                     </Row>
                 }
-            </div>
+            </Container>
             <Container fluid="xxl" className="custom-height d-flex align-items-center">
-                <img src={middleBanner} className="w-100 " alt="" />
+                <img src={middleBanner} className="w-100 shadow-lg" alt="" />
             </Container>
             <Container fluid="xxl" className=" custom-height d-flex align-items-center">
                 <div className="">
@@ -180,7 +182,7 @@ const Home = () => {
                             review.map(review => <ReviewSlider
                                 key={review._id}
                                 review={review}
-                            ></ReviewSlider>)
+                            ></ReviewSlider>).reverse()
                         }
                     </Slider>
 
