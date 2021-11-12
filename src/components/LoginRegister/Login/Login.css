@@ -63,6 +63,11 @@
 .cooker-h2 {
 	text-align: center;
 }
+.login-website-title{
+	color: black;
+	font-family: 'Anton', sans-serif;
+	font-size: 30px;
+}
 
 .cooker-p {
 	font-size: 14px;
@@ -166,6 +171,10 @@
 
 #signUp{
     background-color: transparent;
+	border-color: #FFFFFF;
+}
+#signIn{
+	background-color: transparent;
 	border-color: #FFFFFF;
 }
 
@@ -306,11 +315,21 @@
 @media only screen and (max-width: 480px){
     .overlay-container{
         display: none;
+		/* animation: show 0.6s; */
     }
+	
     .form-container{
         width: 100%;
     }
     #container{
         width: 500px;
     }
+	.cooker-main-container.right-panel-active .sign-up-container {
+		transform: translateX(0);
+		opacity: 1;
+		z-index: 5;
+		transition: transform 0.6s ease-in-out;
+		animation: show 0.6s;
+	}
+	
 }

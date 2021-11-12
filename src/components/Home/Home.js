@@ -77,11 +77,11 @@ const Home = () => {
 
     return (
         <>
-            <div className="w-100 banner-container">
+            {/* <div className="w-100 banner-container">
                 <video width="100%" height="auto" autoPlay="true" loop muted class="banner-video">
                     <source class="desktop_auto_video" src={bannerVideo} type="video/mp4" />
                 </video>
-            </div>
+            </div> */}
             <Container className="my-5 custom-height">
                 <h2 className="pt-4 mb-3 text-start product-title">Customer's Favorite</h2>
                 {

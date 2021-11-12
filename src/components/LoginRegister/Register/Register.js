@@ -4,9 +4,15 @@ import { Link, useLocation, useHistory } from 'react-router-dom';
 import registerImg from '../../../images/register.jpg';
 import useAuth from '../../hooks/useAuth';
 import './Register.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGooglePlusG } from '@fortawesome/free-brands-svg-icons';
+
+
+
+
 
 const Register = () => {
-    const { saveUser, registerEmailAndPassword, error, setError, name, setName, setUser, setIsLoading, userName } = useAuth();
+    const { saveUser, registerEmailAndPassword, signInUsingGoogle, error, setError, name, setName, setUser, setIsLoading, userName } = useAuth();
 
     const location = useLocation();
     const history = useHistory();
@@ -37,6 +43,7 @@ const Register = () => {
         };
 
         registerEmailAndPassword(email, password)
+
             .then(result => {
                 setUser(result.user);
                 console.log(result.user);
@@ -54,40 +61,68 @@ const Register = () => {
             .finally(() => setIsLoading(false));
     }
 
+    const handleGoogleLogin = () => {
+        signInUsingGoogle()
+            .then(result => {
+                setUser(result.user)
+                saveUser(result.user.email, result.user.displayName, 'PUT')
+                setError('')
+                history.push(redirect_uri)
+            })
+            .catch((error) => {
+                setError(error.message);
+            })
+            .finally(() => setIsLoading(false));
+    }
+
+    const handleLoginPageBtn = () => {
+        history.push('/login')
+    }
 
     return (
-        <div className="py-5 bg-color">
-            <Container>
-                <Row>
-                    <Col md={6}>
-                        <div className="container-lg m-2 mx-auto">
-                            <div className="login mx-auto p-3">
-                                <form onSubmit={handleRegistration}>
-                                    <h3 className="mb-5 custom-auth-title">REGISTER</h3>
-                                    <input onBlur={handleNameChange} required className="m-2 p-2 w-75" type="text" name="" id="name" placeholder="Your Name" /><br />
-
-                                    <input onBlur={handleEmailChange} required className="m-2 p-2 w-75" type="email" name="" id="email" placeholder="Your Email" /><br />
-
-                                    <input onBlur={handlePasswordChange} required className="m-2 p-2 w-75" type="password" name="" id="password" placeholder="Your Password" /><br />
-                                    <p className="text-danger mt-2">{error}</p>
-                                    <br />
-
-                                    <input className="w-75 regular-btn p-2 rounded text-white" type="submit" value="Register" />
+        <div className="cooker-login-container">
+            {/* <h2 className="cooker-h2 login-website-title">Cooker Garden</h2> */}
+            <div className="cooker-main-container  right-panel-active" id="cooker-main-container">
+                <div className="form-container sign-up-container">
 
 
-                                </form>
 
-                                <p className="mt-2">I have an account? <Link to="/login">Login</Link></p>
-                            </div>
-
+                    <div className="cooker-form w-100">
+                        <h1 className="cooker-h1">Create Account</h1>
+                        <div className="social-container">
                         </div>
+                        <form className="" onSubmit={handleRegistration}>
+
+                            <input onBlur={handleNameChange} required className="cooker-input" type="text" name="" id="name" placeholder="Your Name" /><br />
+                            <input className="cooker-input" onBlur={handleEmailChange} type="email" name="" id="" placeholder="Your Email" />
+                            <input className="cooker-input" onBlur={handlePasswordChange} type="password" name="" id="" placeholder="Your Password" />
+                            <p className="text-danger my-2">{error}</p>
+                            <p><Link to="/login">Have an account</Link></p>
+                            <input type="submit" value="Sign Up" className="cooker-button" />
+                        </form>
+                    </div>
 
 
-                    </Col>
-                    <Col className="align-self-center"><img src={registerImg} alt="" className="img-fluid" /></Col>
-                </Row>
-            </Container>
+
+                </div>
+                <div className="overlay-container">
+                    <div className="overlay">
+                        <div className="overlay-panel overlay-left">
+                            <h1 className="cooker-h1">Welcome Back!</h1>
+                            <p className="cooker-p">To keep connected with us please login with your personal info</p>
+                            <button onClick={handleLoginPageBtn} className="ghost cooker-button" id="signIn">Sign In</button>
+                        </div>
+                        <div className="overlay-panel overlay-right">
+                            <h1 className="cooker-h1">Hello, People!</h1>
+                            <p className="cooker-p">Enter your personal details and start journey with us</p>
+                            <button onClick={handleLoginPageBtn} className="ghost cooker-button" id="signUp">Sign Up</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
+
     );
 };
 

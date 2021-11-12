@@ -54,13 +54,20 @@
     color: white !important;
     margin-right: 10px;
     padding: 5px 10px;
+    will-change: transform;
+    transition: transform 250ms;
 }
 .nav-link:hover{
-   border-bottom:2px solid rgba(9, 129, 9, 0.815) ;
+   /* border-bottom:2px solid rgba(9, 129, 9, 0.815) ; */
+   transition: transform 250ms;
+    transform: translateY(-5px);
    
 }
 .nav-link:focus{
-    border-bottom:2px solid rgba(9, 129, 9, 0.815) ;
+    /* border-bottom:2px solid #E67E22 ; */
+    transition: transform 250ms;
+    transform: translateY(-5px);
+    color: #E67E22 !important;
     
 }
 
