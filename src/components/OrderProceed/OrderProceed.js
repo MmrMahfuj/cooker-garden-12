@@ -24,7 +24,7 @@ const OrderProceed = () => {
         data.email = user.email
 
         console.log(data);
-        axios.post('http://localhost:5000/orders', data)
+        axios.post('https://hidden-retreat-64560.herokuapp.com/orders', data)
             .then(res => {
                 if (res.data.insertedId) {
                     swal("Ordered Successfully Done!", "You Clicked Okay And Happy!", "success");
@@ -37,7 +37,7 @@ const OrderProceed = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/singleProduct/${id}`)
+        fetch(`https://hidden-retreat-64560.herokuapp.com/singleProduct/${id}`)
             .then(res => res.json())
             .then(data => {
                 setProduct(data)
@@ -85,7 +85,7 @@ const OrderProceed = () => {
                                 <textarea rows="5" placeholder="Optional" className="w-100 p-2  input-field" {...register("instruction",)} />
                                 <br />
                             </div>
-                            <input type="submit" className="regular-btn w-25 mt-2" value="ADD PRODUCT" />
+                            <input type="submit" className="regular-btn w-25 mt-2" value="Confirm" />
                         </form>
                     </Col>
                 </Row>

@@ -24,3 +24,30 @@ font-weight: 600;
     margin-top: -50px;
     z-index: 1 !important;
 } */
+
+
+/* -------------------service part design ----------------------------- */
+.service-box{
+    max-height: 200px;
+    min-height: 200px;
+    padding: 35px 15px;
+    border: 2px solid rgb(223, 216, 216)
+    /* text-align: center; */
+}
+.service-box:hover{
+    border: 2px solid  #E67E22;
+}
+.service-icon{
+    /* margin: 15px 0; */
+    font-size: 60px;
+    color: #E67E22;
+}
+.service-li{
+    margin-top: 15px;
+    list-style: none;
+    font-size: 21px;
+}
+.service-li:hover{
+    color: #E67E22;
+}
+

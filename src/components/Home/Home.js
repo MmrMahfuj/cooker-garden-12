@@ -1,11 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Row } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import bannerImg from '../../images/banner.jpg';
 import './Home.css';
 import Slider from "react-slick";
 import ReviewSlider from '../ReviewSlider/ReviewSlider';
 import Product from '../Product/Product';
 import bannerVideo from '../../images/banner.mp4';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faHourglassHalf, faTrophy, faUserShield, faUserTie } from '@fortawesome/free-solid-svg-icons';
+import { faCheckCircle, faClock, faFilePdf } from '@fortawesome/free-regular-svg-icons';
+import middleBanner from '../../images/middle-bannder.png';
+
+
+
 
 
 
@@ -23,15 +31,13 @@ const Home = () => {
     }, [])
 
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch('https://hidden-retreat-64560.herokuapp.com/reviews')
             .then(res => res.json())
             .then(data => setReview(data))
     }, [])
 
-
-
     const settings = {
-        dots: true,
+        // dots: true,
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 1,
@@ -77,40 +83,113 @@ const Home = () => {
 
     return (
         <>
-            {/* <div className="w-100 banner-container">
+            <div className="w-100 banner-container">
                 <video width="100%" height="auto" autoPlay="true" loop muted class="banner-video">
                     <source class="desktop_auto_video" src={bannerVideo} type="video/mp4" />
                 </video>
-            </div> */}
-            <Container className="my-5 custom-height">
+            </div>
+            <div className="my-5 custom-height container-xxl">
                 <h2 className="pt-4 mb-3 text-start product-title">Customer's Favorite</h2>
                 {
                     <Row className="g-4">
                         {
-                            allProducts.slice(0, 6).map(product => <Product
+                            allProducts.slice(-6).map(product => <Product
                                 key={product._id}
                                 product={product}
                             ></Product>)
                         }
                     </Row>
                 }
+            </div>
+            <Container fluid="xxl" className="custom-height d-flex align-items-center">
+                <img src={middleBanner} className="w-100 " alt="" />
             </Container>
-            <Container className="my-5">
-                <h2 className="pt-4 mb-3 text-start product-title">Top Reviews</h2>
-                <Slider {...settings}>
-                    {
-                        review.map(review => <ReviewSlider
-                            key={review._id}
-                            review={review}
-                        ></ReviewSlider>)
-                    }
-                </Slider>
+            <Container fluid="xxl" className=" custom-height d-flex align-items-center">
+                <div className="">
+                    <h2 className="pt-4 mb-3 pb-3 text-start product-title">Why We Should Be Your Top Choice</h2>
+                    <Row className="g-4">
+                        <Col md={3}>
+                            <div className="service-box">
+                                <FontAwesomeIcon className="service-icon" icon={faHourglassHalf} />
+                                <li className="service-li">Quick Response Times</li>
+                            </div>
+                        </Col>
+                        <Col md={3}>
+                            <div className="service-box">
+                                <FontAwesomeIcon className="service-icon" icon={faFilePdf} />
+                                <li className="service-li">Licensed Electricians</li>
+                            </div>
+                        </Col>
+                        <Col md={3}>
+                            <div className="service-box">
+                                <FontAwesomeIcon className="service-icon" icon={faUserTie} />
+                                <li className="service-li">
+                                    Experienced and Accessible
+                                </li>
+                            </div>
+                        </Col>
+                        <Col md={3}>
+                            <div className="service-box">
+                                <FontAwesomeIcon className="service-icon" icon={faTrophy} />
+                                <li className="service-li">
+                                    Super Service Award
+                                </li>
+                            </div>
+                        </Col>
+                        <Col md={3}>
+                            <div className="service-box">
+                                <FontAwesomeIcon className="service-icon" icon={faClock} />
+                                <li className="service-li">
+                                    Over 60 years of experience
+                                </li>
+                            </div>
+                        </Col>
+                        <Col md={3}>
+                            <div className="service-box">
+                                <FontAwesomeIcon className="service-icon" icon={faCheckCircle} />
+                                <li className="service-li">
+                                    Genuine Products
+                                </li>
+                            </div>
+                        </Col>
+                        <Col md={3}>
+                            <div className="service-box">
+                                <FontAwesomeIcon className="service-icon" icon={faUserShield} />
+                                <li className="service-li">
+                                    Safe & Secure Payment
+                                </li>
+                            </div>
+                        </Col>
+                        <Col md={3}>
+                            <div className="service-box">
+                                <FontAwesomeIcon className="service-icon" icon={faUserShield} />
+                                <li className="service-li">
+                                    Free & Easy Return
+                                </li>
+                            </div>
+                        </Col>
+                    </Row>
+                </div>
+            </Container>
+            <Container fluid="xxl" className=" custom-height ">
+                <div className="align-self-center">
+                    <h2 className="pt-4 mb-3 text-start product-title">Top Reviews</h2>
+
+                    <Slider {...settings}>
+                        {
+                            review.map(review => <ReviewSlider
+                                key={review._id}
+                                review={review}
+                            ></ReviewSlider>)
+                        }
+                    </Slider>
+
+
+                </div>
+
             </Container>
 
-            <Container>
 
-
-            </Container>
 
         </>
     );

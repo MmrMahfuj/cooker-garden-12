@@ -15,6 +15,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import NotFound from './components/NotFound/NotFound';
+import Dashboard2 from './components/Dashboard2/Dashboard2';
 
 
 function App() {
@@ -41,6 +42,11 @@ function App() {
             <PrivateRoute path="/dashboard">
               <Header></Header>
               <Dashboard></Dashboard>
+              <Footer></Footer>
+            </PrivateRoute>
+            <PrivateRoute path="/dashboard-2">
+              <Header></Header>
+              <Dashboard2></Dashboard2>
               <Footer></Footer>
             </PrivateRoute>
             <PrivateRoute path="/orderProceed/:id">

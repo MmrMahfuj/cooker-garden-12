@@ -13,7 +13,7 @@ const Explore = () => {
     }, [])
     return (
         <>
-            <Container className="my-5">
+            <Container fluid="xxl" className="my-5">
                 <Row className="g-4">
                     {
                         allProducts.map(product => <Product

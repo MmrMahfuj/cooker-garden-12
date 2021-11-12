@@ -8,7 +8,7 @@ import { faFacebook, faInstagram, faPinterest, faTwitter, faYoutube } from '@for
 const Footer = () => {
     return (
         <div className="custom-footer">
-            <Container className="py-3">
+            <Container fluid="xxl" className="py-3">
                 <Row>
                     <Col md={3}>
                         <h4 className="mt-2">Websites</h4>

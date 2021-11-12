@@ -29,6 +29,7 @@ import Review from '../Review/Review';
 import useAuth from '../hooks/useAuth';
 import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
 import AdminRoute from '../AdminRoute/AdminRoute';
+import Analytics from './Analytics/Analytics';
 
 
 
@@ -36,8 +37,6 @@ const Dashboard = () => {
     let { path, url } = useRouteMatch();
     const { logOut, setIsLoading, admin } = useAuth();
 
-
-    console.log('im');
     const element = <FontAwesomeIcon icon={faUserCog} />
     return (
         <div className="dashboard">
@@ -49,7 +48,7 @@ const Dashboard = () => {
                         <CDBSidebar textColor="#fff" backgroundColor="#333">
                             <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
                                 <NavLink
-                                    to="/"
+                                    to={`${url}`}
                                     className="text-decoration-none"
                                     style={{ color: 'inherit' }}
                                 >
@@ -122,6 +121,9 @@ const Dashboard = () => {
                 <Col xs={10}>
                     <Container>
                         <Switch>
+                            <Route exact path={path}>
+                                <Analytics></Analytics>
+                            </Route>
                             <Route path={`${path}/payment`}>
                                 <Payment></Payment>
                             </Route>

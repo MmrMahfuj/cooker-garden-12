@@ -38,7 +38,7 @@ const ManageAllProducts = () => {
                 }
 
                 if (willDelete) {
-                    fetch(`http://localhost:5000/deleteProduct/${id}`, {
+                    fetch(`https://hidden-retreat-64560.herokuapp.com/deleteProduct/${id}`, {
                         method: "DELETE",
                         headers: { "content-type": "application/json" },
                     })
@@ -104,7 +104,7 @@ export default ManageAllProducts;
 const proceed = window.confirm('Are you sure, you want to delete');
 
         if (proceed) {
-            fetch(`http://localhost:5000/deleteProduct/${id}`, {
+            fetch(`https://hidden-retreat-64560.herokuapp.com/deleteProduct/${id}`, {
                 method: "DELETE",
                 headers: { "content-type": "application/json" },
             })

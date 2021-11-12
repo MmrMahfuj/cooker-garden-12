@@ -21,7 +21,8 @@ const Review = () => {
 
     const onSubmit = data => {
         data.rating = rating
-        data.email = user.email
+        data.email = user?.email
+        data.photoURL = user?.photoURL
         data.displayName = user.displayName
         axios.post('https://hidden-retreat-64560.herokuapp.com/reviews', data)
             .then(res => {

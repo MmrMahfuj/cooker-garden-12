@@ -8,6 +8,7 @@ initializeAuthentication();
 const useFirebase = () => {
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
+    const [adminIsLoading, setAdminIsLoading] = useState(false);
     const [error, setError] = useState('');
     const [name, setName] = useState('');
     const [admin, setAdmin] = useState(false);
@@ -56,11 +57,14 @@ const useFirebase = () => {
 
     // Checking admin
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${user.email}`)
+        setAdminIsLoading(true)
+        fetch(`https://hidden-retreat-64560.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setAdmin(data.admin)
+
             })
+            .finally(() => setAdminIsLoading(false));
     }, [user.email])
 
 
@@ -102,7 +106,9 @@ const useFirebase = () => {
         setName,
         userName,
         saveUser,
-        admin
+        admin,
+        adminIsLoading
+
     }
 }
 

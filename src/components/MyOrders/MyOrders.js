@@ -13,7 +13,7 @@ const MyOrders = () => {
     const [control, setControl] = useState(false);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myOrders?email=${user.email}`)
+        fetch(`https://hidden-retreat-64560.herokuapp.com/myOrders?email=${user.email}`)
             .then(res => res.json())
             .then(data => setMyOrders(data))
     }, [control, user.email])
@@ -39,7 +39,7 @@ const MyOrders = () => {
                 }
 
                 if (willDelete) {
-                    fetch(`http://localhost:5000/deleteOrders/${id}`, {
+                    fetch(`https://hidden-retreat-64560.herokuapp.com/deleteOrders/${id}`, {
                         method: "DELETE",
                         headers: { "content-type": "application/json" },
                     })
@@ -69,8 +69,8 @@ const MyOrders = () => {
                                 <th>Product Name</th>
                                 <th>Product Price</th>
                                 <th>Payment</th>
-                                <th>Status</th>
-                                <th>Accept</th>
+                                <th>Order</th>
+                                <th>Cancel</th>
                             </tr>
                         </thead>
                         <tbody>

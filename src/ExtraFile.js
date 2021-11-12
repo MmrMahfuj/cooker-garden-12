@@ -99,3 +99,69 @@
                         </div>
                     </Col>
                 </Row>
+
+
+
+
+// old register code 
+
+<div className="py-5 bg-color">
+            <Container>
+                <Row>
+                    <Col md={6}>
+                        <div className="container-lg m-2 mx-auto">
+                            <div className="login mx-auto p-3">
+                                <form onSubmit={handleRegistration}>
+                                    <h3 className="mb-5 custom-auth-title">REGISTER</h3>
+                                    <input onBlur={handleNameChange} required className="m-2 p-2 w-75" type="text" name="" id="name" placeholder="Your Name" /><br />
+
+                                    <input onBlur={handleEmailChange} required className="m-2 p-2 w-75" type="email" name="" id="email" placeholder="Your Email" /><br />
+
+                                    <input onBlur={handlePasswordChange} required className="m-2 p-2 w-75" type="password" name="" id="password" placeholder="Your Password" /><br />
+                                    <p className="text-danger mt-2">{error}</p>
+                                    <br />
+
+                                    <input className="w-75 regular-btn p-2 rounded text-white" type="submit" value="Register" />
+
+
+                                </form>
+
+                                <p className="mt-2">I have an account? <Link to="/login">Login</Link></p>
+                            </div>
+
+                        </div>
+
+
+                    </Col>
+                    <Col className="align-self-center"><img src={registerImg} alt="" className="img-fluid" /></Col>
+                </Row>
+            </Container>
+        </div>
+
+
+
+
+
+//  sin up container 
+<div class="form-container sign-up-container">
+		<form action="#">
+			<h1>Create Account</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your email for registration</span>
+			<input type="text" placeholder="Name" />
+			<input type="email" placeholder="Email" />
+			<input type="password" placeholder="Password" />
+			<button>Sign Up</button>
+		</form>
+	</div>
+
+
+<div class="overlay-panel overlay-right">
+				<h1>Hello, Friend!</h1>
+				<p>Enter your personal details and start journey with us</p>
+				<button class="ghost" id="signUp">Sign Up</button>
+			</div>

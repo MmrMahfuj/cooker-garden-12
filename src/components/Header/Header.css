@@ -8,6 +8,13 @@
 .header-title{
     color: white !important;
     font-family: 'Anton', sans-serif;
+    font-size: 35px !important;
+}
+.cooker-logo{
+    height: 60px;
+    width: 70px;
+    margin-right: 10px;
+    
 }
 .header-img{
     height: 40px;

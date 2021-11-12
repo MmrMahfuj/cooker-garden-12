@@ -35,7 +35,7 @@ const Login = () => {
                 setIsLoading(true)
                 setUser(result.user);
                 setError('');
-                history.replace();
+                history.push(redirect_uri);
             })
             .catch((error) => {
                 setError(error.message);
@@ -50,6 +50,7 @@ const Login = () => {
                 setUser(result.user)
                 saveUser(result.user.email, result.user.displayName, 'PUT')
                 setError('')
+                // console.log(result.user);
                 history.push(redirect_uri)
             })
             .catch((error) => {
