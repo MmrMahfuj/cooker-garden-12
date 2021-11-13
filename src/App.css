@@ -2,6 +2,9 @@
 /* google font  */
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
+body{
+  overflow-x: hidden;
+}
 .App {
   text-align: center;
 }
