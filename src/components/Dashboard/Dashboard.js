@@ -112,7 +112,7 @@ const Dashboard = () => {
                                         padding: '20px 5px',
                                     }}
                                 >
-                                    Sidebar Footer
+
                                 </div>
                             </CDBSidebarFooter>
                         </CDBSidebar>

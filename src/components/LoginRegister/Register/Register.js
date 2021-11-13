@@ -1,18 +1,14 @@
 import React, { useState } from 'react';
-import { Col, Row, Button, Container } from 'react-bootstrap';
 import { Link, useLocation, useHistory } from 'react-router-dom';
-import registerImg from '../../../images/register.jpg';
 import useAuth from '../../hooks/useAuth';
 import './Register.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGooglePlusG } from '@fortawesome/free-brands-svg-icons';
 
 
 
 
 
 const Register = () => {
-    const { saveUser, registerEmailAndPassword, signInUsingGoogle, error, setError, name, setName, setUser, setIsLoading, userName } = useAuth();
+    const { saveUser, registerEmailAndPassword, error, setError, name, setName, setUser, setIsLoading, userName } = useAuth();
 
     const location = useLocation();
     const history = useHistory();
@@ -61,19 +57,19 @@ const Register = () => {
             .finally(() => setIsLoading(false));
     }
 
-    const handleGoogleLogin = () => {
-        signInUsingGoogle()
-            .then(result => {
-                setUser(result.user)
-                saveUser(result.user.email, result.user.displayName, 'PUT')
-                setError('')
-                history.push(redirect_uri)
-            })
-            .catch((error) => {
-                setError(error.message);
-            })
-            .finally(() => setIsLoading(false));
-    }
+    // const handleGoogleLogin = () => {
+    //     signInUsingGoogle()
+    //         .then(result => {
+    //             setUser(result.user)
+    //             saveUser(result.user.email, result.user.displayName, 'PUT')
+    //             setError('')
+    //             history.push(redirect_uri)
+    //         })
+    //         .catch((error) => {
+    //             setError(error.message);
+    //         })
+    //         .finally(() => setIsLoading(false));
+    // }
 
     const handleLoginPageBtn = () => {
         history.push('/login')

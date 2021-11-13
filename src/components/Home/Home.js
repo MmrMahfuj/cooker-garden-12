@@ -7,7 +7,7 @@ import ReviewSlider from '../ReviewSlider/ReviewSlider';
 import Product from '../Product/Product';
 import bannerVideo from '../../images/banner.mp4';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHourglassHalf, faTrophy, faUserShield, faUserTie } from '@fortawesome/free-solid-svg-icons';
+import { faExchangeAlt, faHourglassHalf, faTrophy, faUserShield, faUserTie } from '@fortawesome/free-solid-svg-icons';
 import { faCheckCircle, faClock, faFilePdf } from '@fortawesome/free-regular-svg-icons';
 import middleBanner from '../../images/middle-img2.jpg';
 
@@ -164,7 +164,7 @@ const Home = () => {
                         </Col>
                         <Col md={3}>
                             <div className="service-box">
-                                <FontAwesomeIcon className="service-icon" icon={faUserShield} />
+                                <FontAwesomeIcon className="service-icon" icon={faExchangeAlt} />
                                 <li className="service-li">
                                     Free & Easy Return
                                 </li>

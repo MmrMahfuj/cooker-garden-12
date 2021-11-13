@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Table } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrashAlt, faUserCheck, faUserCog, faShoppingBasket, faCheckSquare, faTruck, faTruckLoading } from '@fortawesome/free-solid-svg-icons'
+import { faTrashAlt, faUserCheck, faShoppingBasket, faCheckSquare, faTruck, faTruckLoading } from '@fortawesome/free-solid-svg-icons'
 import swal from 'sweetalert';
-import useAuth from '../hooks/useAuth';
 
 const ManageAllOrders = () => {
     const [allOrders, setAllOrders] = useState([]);
@@ -86,7 +85,7 @@ const ManageAllOrders = () => {
         <div className="custom-height">
             <Container>
                 <div className="allorderss-page-height">
-                    <h3>orderss List: {allOrders?.length}</h3>
+                    <h3>Orders List: {allOrders?.length}</h3>
                     <Table striped bordered hover responsive>
                         <thead>
                             <tr>

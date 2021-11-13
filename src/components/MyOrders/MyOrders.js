@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Table } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrashAlt, faUserCheck, faUserCog, faShoppingBasket, faCheckSquare, faTruck, faTruckLoading } from '@fortawesome/free-solid-svg-icons'
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 import swal from 'sweetalert';
 import './MyOrders.css';
 import useAuth from '../hooks/useAuth';
@@ -13,10 +13,14 @@ const MyOrders = () => {
     const [control, setControl] = useState(false);
 
     useEffect(() => {
+
         fetch(`https://hidden-retreat-64560.herokuapp.com/myOrders?email=${user.email}`)
             .then(res => res.json())
-            .then(data => setMyOrders(data))
+            .then(data => {
+                setMyOrders(data)
+            })
     }, [control, user.email])
+
 
 
 

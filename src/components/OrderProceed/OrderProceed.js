@@ -29,7 +29,7 @@ const OrderProceed = () => {
                 if (res.data.insertedId) {
                     swal("Ordered Successfully Done!", "You Clicked Okay And Happy!", "success");
                     reset()
-                    history.push('/home')
+                    history.push('/dashboard/myOrders')
 
                 }
             })

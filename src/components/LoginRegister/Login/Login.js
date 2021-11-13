@@ -1,8 +1,5 @@
 import React, { useState, } from 'react';
-import { Button, Col, Container, Row } from 'react-bootstrap';
-import { Link, useLocation, useHistory, NavLink } from 'react-router-dom';
-import loginImg from '../../../images/login.jpg';
-import googleImg from '../../../images/google.png';
+import { Link, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import './Login.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

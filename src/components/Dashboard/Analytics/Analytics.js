@@ -3,7 +3,6 @@ import "./Analytics.css";
 import defaultImg from '../../../images/default-img.png';
 import useAuth from '../../hooks/useAuth';
 import axios from 'axios';
-import { Spinner } from 'react-bootstrap';
 
 const Analytics = () => {
     const { user, setUser, setPhotoURL, setName, DashboardUserProfileUpdate } = useAuth();
@@ -46,46 +45,46 @@ const Analytics = () => {
                     <input type="file" id='image-upload' className='form-control' hidden onChange={handleImageUpload} />
                 </div>
             </div>
-            <div class="container-fluid px-4">
-                <div class="row g-3 my-2">
-                    <div class="col-md-3">
-                        <div class="p-3 bg-light shadow-sm d-flex justify-content-around align-items-center rounded">
+            <div className="container-fluid px-4">
+                <div className="row g-3 my-2">
+                    <div className="col-md-3">
+                        <div className="p-3 bg-light shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
-                                <h3 class="fs-2">720</h3>
-                                <p class="fs-5">Products</p>
+                                <h3 className="fs-2">720</h3>
+                                <p className="fs-5">Products</p>
                             </div>
-                            <i class="fas fa-gift fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                            <i className="fas fa-gift fs-1 primary-text border rounded-full secondary-bg p-3"></i>
                         </div>
                     </div>
 
-                    <div class="col-md-3">
-                        <div class="p-3 bg-light shadow-sm d-flex justify-content-around align-items-center rounded">
+                    <div className="col-md-3">
+                        <div className="p-3 bg-light shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
-                                <h3 class="fs-2">4920</h3>
-                                <p class="fs-5">Sales</p>
+                                <h3 className="fs-2">4920</h3>
+                                <p className="fs-5">Sales</p>
                             </div>
                             <i
-                                class="fas fa-hand-holding-usd fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                                className="fas fa-hand-holding-usd fs-1 primary-text border rounded-full secondary-bg p-3"></i>
                         </div>
                     </div>
 
-                    <div class="col-md-3">
-                        <div class="p-3 bg-light shadow-sm d-flex justify-content-around align-items-center rounded">
+                    <div className="col-md-3">
+                        <div className="p-3 bg-light shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
-                                <h3 class="fs-2">3899</h3>
-                                <p class="fs-5">Delivery</p>
+                                <h3 className="fs-2">3899</h3>
+                                <p className="fs-5">Delivery</p>
                             </div>
-                            <i class="fas fa-truck fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                            <i className="fas fa-truck fs-1 primary-text border rounded-full secondary-bg p-3"></i>
                         </div>
                     </div>
 
-                    <div class="col-md-3">
-                        <div class="p-3 bg-light shadow-sm d-flex justify-content-around align-items-center rounded">
+                    <div className="col-md-3">
+                        <div className="p-3 bg-light shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
-                                <h3 class="fs-2">%25</h3>
-                                <p class="fs-5">Increase</p>
+                                <h3 className="fs-2">%25</h3>
+                                <p className="fs-5">Increase</p>
                             </div>
-                            <i class="fas fa-chart-line fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                            <i className="fas fa-chart-line fs-1 primary-text border rounded-full secondary-bg p-3"></i>
                         </div>
                     </div>
                 </div>

@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Button } from 'react-bootstrap';
-import { useHistory } from 'react-router';
-import useAuth from '../hooks/useAuth';
+import React, { useState } from 'react';
+
 import swal from 'sweetalert';
 
 
