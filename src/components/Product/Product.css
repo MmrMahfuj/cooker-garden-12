@@ -1,3 +1,7 @@
+
+.explore-container{
+    overflow-x: hidden;
+}
 .img-product{
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;

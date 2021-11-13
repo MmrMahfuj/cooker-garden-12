@@ -81,7 +81,7 @@ const Home = () => {
 
 
     return (
-        <>
+        <div className="home-container">
             <div className="w-100  banner-container">
                 <video width="100%" height="auto" autoPlay="true" loop muted class="banner-video shadow-lg">
                     <source class="desktop_auto_video" src={bannerVideo} type="video/mp4" />
@@ -193,7 +193,7 @@ const Home = () => {
 
 
 
-        </>
+        </div>
     );
 };
 

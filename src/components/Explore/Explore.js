@@ -13,7 +13,7 @@ const Explore = () => {
             .then(data => setAllProducts(data))
     }, [])
     return (
-        <>
+        <div className="explore-container">
             <div>
                 <img src={exploreBanner} className="w-100 shadow-lg" alt="" />
             </div>
@@ -27,7 +27,7 @@ const Explore = () => {
                     }
                 </Row>
             </Container>
-        </>
+        </div>
     );
 };
 
