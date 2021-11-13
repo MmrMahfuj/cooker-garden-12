@@ -173,7 +173,7 @@ const Home = () => {
                     </Row>
                 </div>
             </Container>
-            <Container fluid="xxl" className=" custom-height ">
+            <Container fluid="xxl" className=" custom-height">
                 <div className="align-self-center">
                     <h2 className="pt-4 mb-3 text-start product-title">Top Reviews</h2>
 

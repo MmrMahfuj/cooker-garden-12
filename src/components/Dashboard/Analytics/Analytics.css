@@ -78,6 +78,20 @@
     font-weight: bold;
     border: none;
   }
+
+  .profile-img-button{
+    border: none;
+    outline: none;
+    height: 82px;
+    width: 82px;
+    margin: 5px 15px;
+    background: transparent;
+  }
+  .profile-img{
+    height: 70px;
+    width: 70px;
+
+  }
   
   @media (min-width: 768px) {
     #sidebar-wrapper {
@@ -93,4 +107,5 @@
       margin-left: -15rem;
     }
   }
+
   

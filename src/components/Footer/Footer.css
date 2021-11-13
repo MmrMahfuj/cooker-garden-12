@@ -3,7 +3,7 @@
 .custom-footer{
      background-color: #454545;
      color: white;
-     text-align: left;
+     /* text-align: left; */
 }
 .footer-logo{
     height: 150px;

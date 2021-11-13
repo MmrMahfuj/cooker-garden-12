@@ -11,6 +11,7 @@ const useFirebase = () => {
     const [adminIsLoading, setAdminIsLoading] = useState(false);
     const [error, setError] = useState('');
     const [name, setName] = useState('');
+    const [photoURL, setPhotoURL] = useState('');
     const [admin, setAdmin] = useState(false);
 
     const auth = getAuth();
@@ -28,7 +29,22 @@ const useFirebase = () => {
 
     const userName = () => {
         updateProfile(auth.currentUser, { displayName: name })
-            .then(result => { })
+            .then(result => {
+                console.log(result);
+            })
+            .catch((error) => {
+            });
+    }
+
+    // profile update from dashboard
+    const DashboardUserProfileUpdate = user => {
+        console.log(user);
+        updateProfile(auth.currentUser, user)
+            .then(result => {
+                console.log(result);
+            })
+            .catch((error) => {
+            });
     }
 
     const signInUsingGoogle = () => {
@@ -107,7 +123,10 @@ const useFirebase = () => {
         userName,
         saveUser,
         admin,
-        adminIsLoading
+        adminIsLoading,
+        setPhotoURL,
+        photoURL,
+        DashboardUserProfileUpdate
 
     }
 }
