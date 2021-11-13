@@ -87,9 +87,9 @@ const Home = () => {
                     <source class="desktop_auto_video" src={bannerVideo} type="video/mp4" />
                 </video>
             </div>
-            <div>
+            <Container fluid>
                 <img src={bannerImg} className="w-100 banner-img-top my-5" alt="" />
-            </div>
+            </Container>
             <Container fluid="xxl" className="my-5 custom-height">
                 <h2 className="pt-4 mb-3 text-start product-title">Customer's Favorite</h2>
                 {
