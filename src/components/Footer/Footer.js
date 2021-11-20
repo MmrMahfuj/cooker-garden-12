@@ -68,7 +68,7 @@ const Footer = () => {
                 </Row>
                 <hr />
                 <footer>
-                    <h6 className="copyright-color">&copy; Cooker Garden 2021 Made With &hearts; by Mahfuj</h6>
+                    <h6 className="copyright-color">&copy; Cooker Garden 2021 Made With &hearts; by Mahfuj & Amir</h6>
                 </footer>
             </Container>
         </div>
