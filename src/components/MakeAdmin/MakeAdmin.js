@@ -38,7 +38,7 @@ const MakeAdmin = () => {
                     swal("Admin Added Successfully!", "You clicked Okay!", "success");
                 }
                 else if (data.matchedCount === 0) {
-                    setAdminError('No user found.')
+                    setAdminError('No user found. Please put here valid user email.')
                 }
             })
     }
